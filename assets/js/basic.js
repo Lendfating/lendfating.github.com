@@ -110,6 +110,14 @@ function ajax_handle(){
 	var obj_phrase = jQuery("div.span3.left-aside div.bottom-block p");
 	var obj_category = jQuery("div p.description");
 	if ( obj_bg_img.length>0 || obj_phrase.length>0 || obj_category.length>0 ){
+		$.ajax({
+	            type: 'GET',
+	            url: '/assets/ajax-data.json',
+	            dataType: 'json',
+	            success: function(data) {
+	                alert(111111);
+	            }
+	        });
 		 $.get("/assets/ajax-data.json",function(data){
 			if (data.state=="ok"){
 				// 当返回正确的结果时，调用对应的回调函数进行对应的操作
