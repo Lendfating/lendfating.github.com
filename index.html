@@ -18,9 +18,9 @@
 				<h1>Lendfating</h1>
             </div>
 			<div id="info" class="fn-clear">
-				<p>ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½É«ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½</p>
-				<p>ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½É«ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½</p>
-				<p>ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½É«ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½</p>
+				<p>ÎÒ¾ÍÊÇÎÒ£¬ÑÕÉ«²»Ò»ÑùµÄÑÌ»ð</p>
+				<p>ÎÒ¾ÍÊÇÎÒ£¬ÑÕÉ«²»Ò»ÑùµÄÑÌ»ð</p>
+				<p>ÎÒ¾ÍÊÇÎÒ£¬ÑÕÉ«²»Ò»ÑùµÄÑÌ»ð</p>
 			</div>
             <div id="follow" class="fn-clear">
                 <p>
@@ -71,60 +71,6 @@
                     navs[0].className = "";
                 }
             }
-
-            /**
-             *  scrollTo Top
-             */
-            var scrollTo = {
-                nodeName: "J-backTop",
-				scrollHeight: "100",
-				linkBottom: "1em",
-				linkRight: "1em",
-				_scrollTop: function() {
-					if(jQuery.scrollTo) {
-						jQuery.scrollTo(0, 800, {queue:true});
-					}
-                },
-                _scrollScreen: function() {
-                    var that = this, topLink = $('#' + that.nodeName);
-                    if(jQuery(document).scrollTop() <= that.scrollHeight) {
-                        topLink.hide();
-                        return true;
-                    }  else {
-                        topLink.fadeIn();
-                    }
-                },
-                _resizeWindow: function() {
-                    var that = this, topLink = $('#' + that.nodeName);
-                    topLink.css({
-                        'right' : that.linkRight,
-                        'bottom': that.linkBottom
-                    });
-                },
-                run: function() {
-                    var that = this, topLink = $('<a id="' + that.nodeName + '" href="#" class="toTop"><i class=" icon-chevron-up"></i></a>');
-                    topLink.appendTo($('body'));
-                    topLink.css({
-                        'display': 'none',
-                        'position': 'fixed',
-                        'right': that.linkRight,
-                        'bottom': that.linkBottom
-                    });
-                    if(jQuery.scrollTo) {
-                        topLink.click(function() {
-                            that._scrollTop();
-                            return false;
-                        });
-                    }
-                    jQuery(window).resize(function() {
-                        that._scrollScreen();
-                    });
-                    jQuery(window).scroll(function() {
-                        that._scrollScreen();
-                    });
-                }
-            }
-            scrollTo.run();
 
             /**
              * close left
