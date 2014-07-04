@@ -1,10 +1,10 @@
 {
-	state: "ok",
-	left_bg: {
-				basic_url:"http://lendfating.github.com/assets/images/left-bg/",
-				size: 50
+	"state": "ok",
+	"left_bg": {
+				"basic_url":"http://lendfating.github.com/assets/images/left-bg/",
+				"size": "50"
 			},
-	phrase: [
+	"phrase": [
 				"最好的青春，当做最有意义的事情，切莫虚度了此时，后悔了明日。",
 				"在生活中思考，在嘈杂中沉静，在实践中学习",
 				"生如夏花之绚烂，死如秋叶之静美.",
@@ -16,9 +16,9 @@
 				"海纳百川，有容乃大；壁立千仞，无欲则刚。",
 				"山高自有客行路，水深自有渡船人。"
 			],
-	categories:{
-		jekyll: { avatar:"http://lendfating.github.com/assets/images/categories/jekyll.jpg", description:"与 jekyll 相关的文章。jekyll 是一种静态网站生成引擎。" },
-		study: { avatar:"http://lendfating.github.com/assets/images/categories/study.jpg", description:"与 jekyll 相关的文章。jekyll 是一种静态网站生成引擎。" },
-		upload: { avatar:"http://lendfating.github.com/assets/images/categories/upload.jpg", description:"与 jekyll 相关的文章。jekyll 是一种静态网站生成引擎。" }
+	"categories":{
+		"jekyll": { "avatar":"http://lendfating.github.com/assets/images/categories/jekyll.jpg", "description":"与 jekyll 相关的文章。jekyll 是一种静态网站生成引擎。" },
+		"study": { "avatar":"http://lendfating.github.com/assets/images/categories/study.jpg", "description":"与 jekyll 相关的文章。jekyll 是一种静态网站生成引擎。" },
+		"upload": { "avatar":"http://lendfating.github.com/assets/images/categories/upload.jpg", "description":"与 jekyll 相关的文章。jekyll 是一种静态网站生成引擎。" }
 	}
 }
