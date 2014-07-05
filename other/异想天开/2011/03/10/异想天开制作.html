@@ -237,7 +237,7 @@ Make any link standout more when applying the `.btn` class.
 							<a href="#" onclick="change_tab_pane(1); return false;">作者信息</a>
 						</li>
 						<li class="">
-							<a href="#" onclick="change_tab_pane(2); return false;">评论</a>
+							<a href="#" onclick="change_tab_pane(2); open_disqus_comments(); return false;">评论</a>
 						</li>
 						<li class="">
 							<a href="#" onclick="change_tab_pane(3); return false;">喜欢</a>
@@ -281,11 +281,14 @@ Make any link standout more when applying the `.btn` class.
     var disqus_identifier = '/%E5%BC%82%E6%83%B3%E5%A4%A9%E5%BC%80/2011/03/10/异想天开制作'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
  
     /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
+	var disqus_loaded = false;
+    function open_disqus_comments() {
+		if ( disqus_loaded ) return;
+		disqus_loaded = true;
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+    };
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
