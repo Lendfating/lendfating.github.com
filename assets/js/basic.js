@@ -118,7 +118,7 @@ function ajax_handle(){
 				if (obj_phrase.length>0)
 					obj_phrase.text(data.phrase[Math.floor(Math.random()*eval(data.phrase).length)]);
 				if (obj_category.length>0)
-					obj_category.text(data.categories[obj_category.attr("category")]);
+					obj_category.text(data.categories[obj_category.attr("category")].description);
 			}
 		});
 	}
