@@ -75,7 +75,7 @@
 			<ul class="recommened-nav navigation clearfix">
 				<li class="active"><a>学习 · 总结 · 分享</a></li>
 				<li class="search">
-					<form  action="/other/search">
+					<form name="search_form" action="/other/search">
 						<input type="text" name="q" placeholder="搜索" class="input-medium search-query"/>
 					</form>
 				</li>
@@ -83,16 +83,22 @@
 		</div>
 		<ul class="thumbnails">
 			<script>
-			  (function() {
-				var cx = '008463852630116997049:e7afhkhopuc';
-				var gcse = document.createElement('script');
-				gcse.type = 'text/javascript';
-				gcse.async = true;
-				gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-					'//www.google.com/cse/cse.js?cx=' + cx;
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(gcse, s);
-			  })();
+				function getUrlParam(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+					var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+					if (r != null) return decodeURI(r[2]); return null; //返回参数值
+				}
+				(function() {
+					search_form.q.value = getUrlParam('q');	// 填充搜索框
+					var cx = '008463852630116997049:e7afhkhopuc';
+					var gcse = document.createElement('script');
+					gcse.type = 'text/javascript';
+					gcse.async = true;
+					gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+						'//www.google.com/cse/cse.js?cx=' + cx;
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(gcse, s);
+				})();
 			</script>
 			<gcse:searchresults-only></gcse:searchresults-only>
 		</ul>
