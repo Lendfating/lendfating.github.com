@@ -97,7 +97,7 @@ var setting = {
 		mode.addClass("active");
 		setting.mode = mode;
 		// 记录该模式
-		setting.setCookie("mode", $(this).attr("data"), 30);
+		setting.setCookie("mode", mode.attr("data"), 30);
 	},
 	setFont: function(font){
 		// 字体设置
@@ -107,7 +107,7 @@ var setting = {
 		font.addClass("active");
 		setting.font = font;
 		// 记录该字体
-		setting.setCookie("font", $(this).attr("data"), 30);
+		setting.setCookie("font", font.attr("data"), 30);
 	},
 	open: function(){
 		if (menu.opened) menu.close();
