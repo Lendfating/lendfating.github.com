@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study</title>
+    <title>Blog for recording the way of learning</title>
 	<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <link rel="stylesheet" href="/assets/css/style.css">
 	<script src="/assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
@@ -23,9 +23,9 @@
 <div class="navbar-menu">
 	<button class="dl-trigger">Open Menu</button>
 	<ul class="dl-menu">
-		<li><a href="/study/">Home</a></li>
-		<li class="dl-detail"><a href="/study/tags">Tags</a></li>
-		<li class="dl-detail"><a href="/study/categories">Categories</a></li>
+		<li><a href="/other/">Home</a></li>
+		<li class="dl-detail"><a href="/other/tags">Tags</a></li>
+		<li class="dl-detail"><a href="/other/categories">Categories</a></li>
 		<li><a href="/about">About me</a></li>
 		<li><a href="/index">External Link</a></li>
 	</ul>
@@ -59,47 +59,46 @@
 
 		<!-- 主面板显示区域 -->
 		<div class="row-fluid">
-			<div class="collections ranking">
+			<!-- 主面板显示区域 -->
+<div class="recommended">
 	<div class="span3 left-aside">
 		<img class="cover-img" />
 		<div class="bottom-block">
 			<h1>博客</h1>
-			<h3>记录思想，留迹墨香</h3>
-			<p>最好的青春，当做最有意义的事情，切莫虚度了此时，后悔了明日。</p>
-			<a class="btn btn-large btn-success">写点什么</a>
+			<h3>让知识沉淀、流传</h3>
+			<p>在生活中思考，在嘈杂中沉静，在实践中学习</p>
+			<a class="btn btn-large btn-success">动手写作</a>
 		</div>
 	</div>
-	<div class="span7 offset3 ranking-list">
+	<div class="span7 offset3">
 		<div class="page-title">
-			<ul class="ranking-nav navigation clearfix">
+			<ul class="recommened-nav navigation clearfix">
 				<li class="active"><a>学习 · 总结 · 分享</a></li>
 				<li class="search">
-					<form  action="/study/search">
+					<form  action="/other/search">
 						<input type="text" name="q" placeholder="搜索" class="input-medium search-query"/>
 					</form>
 				</li>
 			</ul>
 		</div>
-		<div class="tab-pane active">
-			<h4 class="guide-title">请选择待查找的博客标签，方便我们对博客进行过滤</h4>
-			<div class="subscribe-guide">
-				<ul class="unstyled clearfix sort-nav">
-					<li class="active">
-						<a href="/study/tags">全部</a>
-					</li>
-					
-				</ul>
-				<div class="tab-content">
-					<div id="list-container" class="tab-pane active weeks">
-						<ul class="top-notes">
-							
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+		<ul class="thumbnails">
+			<script>
+			  (function() {
+				var cx = '008463852630116997049:e7afhkhopuc';
+				var gcse = document.createElement('script');
+				gcse.type = 'text/javascript';
+				gcse.async = true;
+				gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+					'//www.google.com/cse/cse.js?cx=' + cx;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(gcse, s);
+			  })();
+			</script>
+			<gcse:searchresults-only></gcse:searchresults-only>
+		</ul>
 	</div>
 </div>
+<!-- end of 主面板显示区域 -->
 
 
 		</div>
