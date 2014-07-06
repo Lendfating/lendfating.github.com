@@ -29,6 +29,26 @@
         <loc>http://lendfating.github.com/study/sitemap.xml</loc>
     </url>
     
+    <url>
+        <loc>http://lendfating.github.com/study/tags/jekyll/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://lendfating.github.com/study/tags/github/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://lendfating.github.com/study/tags/%E5%8D%9A%E5%AE%A2/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://lendfating.github.com/study/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html</loc>
+    </url>
+    
 
+    
+    <url>
+        <loc>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
+    </url>
     
 </urlset>
