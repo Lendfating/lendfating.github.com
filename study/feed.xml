@@ -9,21 +9,10 @@
       <item>
         <title>利用jekyll搭建博客</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;pre&gt;&lt;code&gt;A. 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了；
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;pre&gt;&lt;code&gt;B. 博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。&lt;/p&gt;
+  &lt;p&gt;一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：
+A. 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； 
+B. 博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。
+因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;好了，抱怨了这么多，下面开始讲述博客的搭建过程。&lt;/p&gt;
