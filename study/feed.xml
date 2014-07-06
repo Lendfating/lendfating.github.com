@@ -9,33 +9,23 @@
       <item>
         <title>利用jekyll搭建博客</title>
         <description>&lt;blockquote&gt;
-  &lt;h2 id=&quot;section&quot;&gt;这是一个标题。&lt;/h2&gt;
+  &lt;p&gt;一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：&lt;/p&gt;
 
   &lt;ol&gt;
-    &lt;li&gt;这是第一行列表项。&lt;/li&gt;
-    &lt;li&gt;这是第二行列表项。&lt;/li&gt;
+    &lt;li&gt;之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； &lt;/li&gt;
+    &lt;li&gt;博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。&lt;/li&gt;
   &lt;/ol&gt;
 
-  &lt;p&gt;给出一些例子代码：&lt;/p&gt;
-
-  &lt;pre&gt;&lt;code&gt;return shell_exec(&quot;echo $input | $markdown_script&quot;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：
-+ 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； 
-+ 博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。
-因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。&lt;/p&gt;
+  &lt;p&gt;因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;好了，抱怨了这么多，下面开始讲述博客的搭建过程。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;1. 功能需求&lt;/h3&gt;
+&lt;h3 id=&quot;section&quot;&gt;1. 功能需求&lt;/h3&gt;
 
 &lt;p&gt;在最开始，根据之前使用博客的经验和自己的思考，先整理一下对新博客的功能需求信息，以方便进行合理的私人定制工作。下面分别就内容结构、功能等方面进行说明。&lt;/p&gt;
 
-&lt;h5 id=&quot;section-2&quot;&gt;1.1 内容组织&lt;/h5&gt;
+&lt;h5 id=&quot;section-1&quot;&gt;1.1 内容组织&lt;/h5&gt;
 
 &lt;p&gt;结构组织，也就是整个博客网站内容的逻辑组织结构，初步打算按&lt;code&gt;模块(module)&lt;/code&gt;–&amp;gt;&lt;code&gt;专题(category)&lt;/code&gt;–&amp;gt;&lt;code&gt;博文(post)&lt;/code&gt;的层次进行组织。&lt;/p&gt;
 
@@ -45,7 +35,7 @@
 &lt;code&gt;项目实践模块&lt;/code&gt;：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。
 &lt;code&gt;生活点滴模块&lt;/code&gt;：主要用于其他事项的记录，如异想天开、定期规划、生活点滴、定期总结等专题。&lt;/p&gt;
 
-&lt;h5 id=&quot;section-3&quot;&gt;1.2 功能说明&lt;/h5&gt;
+&lt;h5 id=&quot;section-2&quot;&gt;1.2 功能说明&lt;/h5&gt;
 
 &lt;p&gt;既然要做一个新博客，那么他必须要比之前的有很多更吸引自己的特性才可以。&lt;/p&gt;
 
