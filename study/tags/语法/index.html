@@ -7,11 +7,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<meta name="description" content="Blog for recording the way of life.">
+	<meta name="description" content="Blog for recording the way of learning.">
 	
 	<meta name="google-site-verification" content="fZui8gemJWp_6GIGMGUgnF5l5o5b0RgzDhfmzv-PSnY">
 	
-    <title>专题: 生活点滴</title>
+    <title>标签: 语法</title>
 	
 	<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -29,9 +29,9 @@
 <div class="navbar-menu">
 	<button class="dl-trigger">Open Menu</button>
 	<ul class="dl-menu">
-		<li><a href="/other/">Home</a></li>
-		<li class="dl-detail"><a href="/other/tags">Tags</a></li>
-		<li class="dl-detail"><a href="/other/categories">Categories</a></li>
+		<li><a href="/study/">Home</a></li>
+		<li class="dl-detail"><a href="/study/tags">Tags</a></li>
+		<li class="dl-detail"><a href="/study/categories">Categories</a></li>
 		<li><a href="http://www.linkedin.com/profile/view?id=352723424&authType=name&authToken=C1k5&trk=member-photo" target="_blank">About me</a></li>
 		<li><a href="/index">External Link</a></li>
 	</ul>
@@ -65,60 +65,89 @@
 
 		<!-- 主面板显示区域 -->
 		<div class="row-fluid">
-			<div class="recommended">
-	<div class="span3 aside">
-		<div class="avatar">
-			<img src="/assets/images/categories/生活点滴.jpg" thumbnail="300x300">
-		</div>
-		<h3 class="title">
-			<a href="/other/categories/生活点滴">生活点滴</a>
-		</h3>
-		<p class="description" category="生活点滴"></p>
-		<div class="meta"><a>1 篇文章</a></div>
-		<div class="author">
-			<a href="">呈熙</a> 编
+			<div class="collections ranking">
+	<div class="span3 left-aside">
+		<img class="cover-img" />
+		<div class="bottom-block">
+			<h1>博客</h1>
+			<h3>记录思想，留迹墨香</h3>
+			<p>最好的青春，当做最有意义的事情，切莫虚度了此时，后悔了明日。</p>
+			<a class="btn btn-large btn-success">写点什么</a>
 		</div>
 	</div>
-	<div class="span7 offset3">
+	<div class="span7 offset3 ranking-list">
 		<div class="page-title">
-			<ul class="recommened-nav navigation clearfix">
+			<ul class="ranking-nav navigation clearfix">
 				<li class="active"><a>学习 · 总结 · 分享</a></li>
 				<li class="search">
-					<form  action="/other/search">
+					<form  action="/study/search">
 						<input type="text" name="q" placeholder="搜索" class="input-medium search-query"/>
 					</form>
 				</li>
 			</ul>
 		</div>
-		<ul class="thumbnails">
-			
-			<li class="clearfix">
-				<div class="article">
-					<a class="title" href="/other//%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/2014/07/06/%E5%8D%83%E9%87%8C%E4%B9%8B%E8%A1%8C%E5%A7%8B%E4%BA%8E%E8%B6%B3%E4%B8%8B.html" target="_blank">千里之行始于足下</a>
-					<br>
-					<a class="content" href="/other//%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/2014/07/06/%E5%8D%83%E9%87%8C%E4%B9%8B%E8%A1%8C%E5%A7%8B%E4%BA%8E%E8%B6%B3%E4%B8%8B.html" target="_blank">Below is just about everything you'll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
-
-</a>
-					<div class="article-info">
-						<i class="icon-book"></i>
-						<a class="notebook" href="/other/categories/生活点滴">生活点滴</a>
-						&nbsp;
-						<i class="icon-th"></i>
-						
-							<a class="collections" href="/other/tags/心情">心情</a>
-						
-							<a class="collections" href="/other/tags/随语">随语</a>
-						
-						&nbsp;
-						<i class="icon-clock"></i>
-						July 06, 2014
+		<div class="tab-pane active">
+			<h4 class="guide-title">请选择待查找的博客标签，方便我们对博客进行过滤</h4>
+			<div class="subscribe-guide">
+				<ul class="unstyled clearfix sort-nav">
+					<li>
+						<a href="/study/tags">全部</a>
+					</li>
+					
+					<li >
+						<a href="/study/tags/markdown">markdown</a>
+					</li>
+					
+					<li  class="active" >
+						<a href="/study/tags/语法">语法</a>
+					</li>
+					
+					<li >
+						<a href="/study/tags/jekyll">jekyll</a>
+					</li>
+					
+					<li >
+						<a href="/study/tags/github">github</a>
+					</li>
+					
+					<li >
+						<a href="/study/tags/博客">博客</a>
+					</li>
+					
+				</ul>
+				<div class="tab-content">
+					<div id="list-container" class="tab-pane active weeks">
+						<ul class="top-notes">
+							
+							<li>
+								<b>1</b>
+								<a class="maleskine-author avatar" href="/study/categories/博客搭建">
+									<img alt="100" src="/assets/images/categories/博客搭建.jpg">
+								</a>
+								<h4><a href="/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/Markdown%E5%AD%A6%E4%B9%A0.html" target="_blank">Markdown语法学习</a></h4>
+								<div class="article-info">
+									<i class="icon-book"></i>
+									<a class="notebook" href="/study/categories/博客搭建">博客搭建</a>
+									<i class="icon-th"></i>&nbsp;
+									
+										<a class="collections" href="/study/tags/markdown">markdown</a>
+									
+										<a class="collections" href="/study/tags/语法">语法</a>
+									
+									&nbsp;
+									<i class="icon-clock"></i>
+									July 06, 2014
+								</div>
+							</li>
+							
+						</ul>
 					</div>
 				</div>
-			</li>
-			
-		</ul>
+			</div>
+		</div>
 	</div>
 </div>
+
 
 		</div>
 		<!-- end of 主面板显示区域 -->

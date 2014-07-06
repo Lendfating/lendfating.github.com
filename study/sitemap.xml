@@ -30,6 +30,14 @@
     </url>
     
     <url>
+        <loc>http://lendfating.github.com/study/tags/markdown/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://lendfating.github.com/study/tags/%E8%AF%AD%E6%B3%95/index.html</loc>
+    </url>
+    
+    <url>
         <loc>http://lendfating.github.com/study/tags/jekyll/index.html</loc>
     </url>
     
@@ -49,6 +57,10 @@
     
     <url>
         <loc>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/Markdown%E5%AD%A6%E4%B9%A0.html</loc>
     </url>
     
 </urlset>
