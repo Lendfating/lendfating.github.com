@@ -83,8 +83,9 @@ a:hover { color: #2b3034; text-decoration: none !important;}
     margin-bottom: .8em;
 }
 #follow {
-    padding: 0 4em 4em 4em;
-    text-align: right;
+    position: absolute;
+	bottom: 50px;
+	right: 40px;
 }
 #follow a {
     display: inline-block;
