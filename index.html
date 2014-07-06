@@ -57,16 +57,19 @@
     <script type="text/javascript">
         $(document).ready(function() {
             /**
-             * close left
+             * toggle left
              */
-            $("#J-closeLeft").toggle(function() {
-                $("#head").addClass("head-hide");
-                $("#contain").addClass("contain-full");
-            }, function() {
-                $("#head").removeClass("head-hide");
+			function open_left(){
+				$("#head").removeClass("head-hide");
                 $("#contain").removeClass("contain-full");
-            });
-
+				$("#J-closeLeft").click(close_left);
+			}
+			function close_left(){
+				$("#head").addClass("head-hide");
+                $("#contain").addClass("contain-full");
+				$("#J-closeLeft").click(open_left);
+			}
+            $("#J-closeLeft").click(close_left);
         });
     </script>
 </body></html>
