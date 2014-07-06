@@ -11851,17 +11851,12 @@ ul.dropdown-menu img {
 
 .post .sns {
     margin-bottom: 10px
+	font-size: 18px;
 }
 
 .post .sns a {
-    width: 13px;
     margin-left: 7px;
     display: inline-block
-}
-
-.post .sns a .icon-home {
-    vertical-align: middle;
-    font-size: 16px
 }
 
 .post .microcode {

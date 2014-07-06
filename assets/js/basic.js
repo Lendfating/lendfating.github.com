@@ -68,6 +68,8 @@ var setting = {
 		setting.obj_box = jQuery(".navbar-setting .setting-box");
 		setting.mode = jQuery(".navbar-setting a.btn.btn-daytime.active");
 		setting.font = jQuery(".navbar-setting a.btn.font.active");
+		// 只在需要的地方进行下续操作
+		if (setting.obj.length==0) return;
 		// 根据 cookie 记录，修改初始显示方式
 		if (setting.getCookie("mode")=="reader-night-mode"){
 			setting.setMode(jQuery(".navbar-setting a.btn.btn-nighttime"));
