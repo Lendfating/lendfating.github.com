@@ -9,14 +9,10 @@
       <item>
         <title>利用jekyll搭建博客</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：&lt;/p&gt;
-
-  &lt;ol&gt;
-    &lt;li&gt;之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； &lt;/li&gt;
-    &lt;li&gt;博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。&lt;/li&gt;
-  &lt;/ol&gt;
-
-  &lt;p&gt;因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。&lt;/p&gt;
+  &lt;p&gt;一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：&lt;br /&gt;
+1. 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； &lt;br /&gt;
+2. 博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。&lt;br /&gt;
+因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;好了，抱怨了这么多，下面开始讲述博客的搭建过程。&lt;/p&gt;
@@ -29,24 +25,30 @@
 
 &lt;p&gt;结构组织，也就是整个博客网站内容的逻辑组织结构，初步打算按&lt;code&gt;模块(module)&lt;/code&gt;–&amp;gt;&lt;code&gt;专题(category)&lt;/code&gt;–&amp;gt;&lt;code&gt;博文(post)&lt;/code&gt;的层次进行组织。&lt;/p&gt;
 
-&lt;p&gt;整个网站按内容划分为三个比较独立的模块：&lt;code&gt;技术学习(study)&lt;/code&gt;、&lt;code&gt;项目实践(project)&lt;/code&gt;、&lt;code&gt;生活点滴(other)&lt;/code&gt;。模块间的独立性较强，尤其是&lt;code&gt;生活点滴&lt;/code&gt;模块，最好与其他两个模块间的独立性要更强。&lt;/p&gt;
+&lt;p&gt;整个网站按内容划分为三个比较独立的模块：&lt;code&gt;技术学习(study)&lt;/code&gt;、 &lt;code&gt;项目实践(project)&lt;/code&gt;、 &lt;code&gt;生活点滴(other)&lt;/code&gt;。 模块间的独立性较强，尤其是&lt;code&gt;生活点滴&lt;/code&gt;模块，最好与其他两个模块间的独立性要更强。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;技术学习模块&lt;/code&gt;：主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。
-&lt;code&gt;项目实践模块&lt;/code&gt;：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。
-&lt;code&gt;生活点滴模块&lt;/code&gt;：主要用于其他事项的记录，如异想天开、定期规划、生活点滴、定期总结等专题。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;技术学习模块&lt;/code&gt;：主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;项目实践模块&lt;/code&gt;：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;生活点滴模块&lt;/code&gt;：主要用于其他事项的记录，如异想天开、定期规划、生活点滴、定期总结等专题。&lt;/p&gt;
 
 &lt;h5 id=&quot;section-2&quot;&gt;1.2 功能说明&lt;/h5&gt;
 
 &lt;p&gt;既然要做一个新博客，那么他必须要比之前的有很多更吸引自己的特性才可以。&lt;/p&gt;
 
-&lt;p&gt;a. 整个网站组织一定要条理清晰，方便用户很容易的找到自己需要的博文。为了达到这一点，整个网站分五层进行组织。组织结构如下图：
-&lt;img src=&quot;http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cfhin86j20oc0dlt9v.jpg&quot; alt=&quot;网站组织结构&quot; /&gt;
-如上图，整个网站或分为三个比较独立的&lt;code&gt;模块&lt;/code&gt;，在每个&lt;code&gt;模块&lt;/code&gt;内，会有很多博文。每个&lt;code&gt;博文&lt;/code&gt;都会属于一个&lt;code&gt;专题&lt;/code&gt;，同时可能被贴上若干个&lt;code&gt;标签&lt;/code&gt;，因此这些博文可以按&lt;code&gt;专题&lt;/code&gt;或&lt;code&gt;标签&lt;/code&gt;两种方式进行组织。因此，对应的该网站总共可以划分为5类网页。
-&lt;code&gt;网站首页&lt;/code&gt;：主要提供三个子模块的连接。
-&lt;img src=&quot;http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cxrnzphj20jn085dgg.jpg&quot; alt=&quot;网站首页&quot; /&gt;
-&lt;code&gt;模块首页&lt;/code&gt;：展示该模块的所有博文列表。
-&lt;img src=&quot;http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cz2hy7ej20wd0gzdj5.jpg&quot; alt=&quot;模块首页&quot; /&gt;
-&lt;code&gt;专题首页&lt;/code&gt;：展示该模块所包含的所有专题列表。
+&lt;p&gt;&lt;em&gt;1.2.1&lt;/em&gt; 整个网站组织一定要条理清晰，方便用户很容易的找到自己需要的博文。为了达到这一点，整个网站分五层进行组织。组织结构如下图：
+&lt;img src=&quot;http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cfhin86j20oc0dlt9v.jpg&quot; alt=&quot;网站组织结构&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如上图，整个网站或分为三个比较独立的&lt;code&gt;模块&lt;/code&gt;，在每个&lt;code&gt;模块&lt;/code&gt;内，会有很多博文。每个&lt;code&gt;博文&lt;/code&gt;都会属于一个&lt;code&gt;专题&lt;/code&gt;，同时可能被贴上若干个&lt;code&gt;标签&lt;/code&gt;，因此这些博文可以按&lt;code&gt;专题&lt;/code&gt;或&lt;code&gt;标签&lt;/code&gt;两种方式进行组织。因此，对应的该网站总共可以划分为5类网页。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;网站首页&lt;/code&gt;：主要提供三个子模块的连接。
+&lt;img src=&quot;http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cxrnzphj20jn085dgg.jpg&quot; alt=&quot;网站首页&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;模块首页&lt;/code&gt;：展示该模块的所有博文列表。
+&lt;img src=&quot;http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cz2hy7ej20wd0gzdj5.jpg&quot; alt=&quot;模块首页&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;专题首页&lt;/code&gt;：展示该模块所包含的所有专题列表。
 &lt;img src=&quot;http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cyozcffj20v80g6abc.jpg&quot; alt=&quot;专题首页&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;专题详情页&lt;/code&gt;：展示该专题下的所有博文列表。
@@ -58,13 +60,16 @@
 &lt;p&gt;&lt;code&gt;博文页&lt;/code&gt;：展示博文的具体内容。
 &lt;img src=&quot;http://ww2.sinaimg.cn/large/72a3bba3jw1ei3czg5ylpj20wy0gjacs.jpg&quot; alt=&quot;博文页&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;b. 网站应具备的功能说明：
-1. 提供基本工具栏（包括导航栏、回到顶部等）。
-2. 允许随时自定义及添加一些励志的名言警句，并不定期显示。
-3. 界面风格方面，不要求很华丽，朴实但要条理清晰、整洁，参考简书的样式吧。
-4. 用markdown进行博客的书写，方便跨平台的实现
-5. 图片用图床实现。图床一定要想好怎么办。
-6. 尽量实现一个可视化的简单博客书写平台。为了简化，省略登陆步骤，改用本地写博客的方式，不提供在线可视化的博客书写。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.2.2&lt;/em&gt; 网站应具备的功能说明：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;提供基本工具栏（包括导航栏、回到顶部等）。  &lt;/li&gt;
+  &lt;li&gt;允许随时自定义及添加一些励志的名言警句，并不定期显示。  &lt;/li&gt;
+  &lt;li&gt;界面风格方面，不要求很华丽，朴实但要条理清晰、整洁，参考简书的样式吧。  &lt;/li&gt;
+  &lt;li&gt;用markdown进行博客的书写，方便跨平台的实现。  &lt;/li&gt;
+  &lt;li&gt;图片用图床实现。图床一定要想好怎么办。  &lt;/li&gt;
+  &lt;li&gt;尽量实现一个可视化的简单博客书写平台。为了简化，省略登陆步骤，改用本地写博客的方式，不提供在线可视化的博客书写。&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;2、结构组织方面，一定要条理清晰。一个模块相当于一个独立的网站，每个模块内提供 hot posts 展示、按专题展示、每个专题内Posts展示、按标签展示。
 	主要提供按标签分类查找和按专题分类查找两种方式，因此页面的组织结构也主要围绕这两种方式展开。
@@ -74,129 +79,6 @@
 	文章（Post）详情页：显示文章正文。
 	此外，由于提供搜索功能，因此需要定制一个搜索结果展示页。
 3、&lt;/p&gt;
-
-&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
-
-&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
-
-&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
-
-&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
-
-&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
-
-&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
-
-&lt;h3 id=&quot;body-text&quot;&gt;Body text&lt;/h3&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/strong&gt;. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
-
-&lt;p class=&quot;pull-right&quot;&gt;&lt;img src=&quot;http://lendfating.github.com/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This is emphasized&lt;/em&gt;. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H&lt;sub&gt;2&lt;/sub&gt;O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times &lt;cite&gt;(That’s a citation)&lt;/cite&gt;. &lt;u&gt;Underline&lt;/u&gt;. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
-
-&lt;p&gt;HTML and &lt;abbr title=&quot;cascading stylesheets&quot;&gt;CSS&lt;abbr&gt; are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.&lt;/abbr&gt;&lt;/abbr&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;blockquotes&quot;&gt;Blockquotes&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet, test link adipiscing elit. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;list-types&quot;&gt;List Types&lt;/h2&gt;
-
-&lt;h3 id=&quot;ordered-lists&quot;&gt;Ordered Lists&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Item one
-    &lt;ol&gt;
-      &lt;li&gt;sub item one&lt;/li&gt;
-      &lt;li&gt;sub item two&lt;/li&gt;
-      &lt;li&gt;sub item three&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Item two&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;unordered-lists&quot;&gt;Unordered Lists&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Item one&lt;/li&gt;
-  &lt;li&gt;Item two&lt;/li&gt;
-  &lt;li&gt;Item three&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
-
-&lt;table rules=&quot;groups&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Header1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Header2&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Header3&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Foot1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Foot2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Foot3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;code-snippets&quot;&gt;Code Snippets&lt;/h2&gt;
-
-&lt;p&gt;Syntax highlighting via Pygments&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-240px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Non Pygments code example&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&quot;awesome&quot;&amp;gt;
-    &amp;lt;p&amp;gt;This is great isn&#39;t it?&amp;lt;/p&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;buttons&quot;&gt;Buttons&lt;/h2&gt;
-
-&lt;p&gt;Make any link standout more when applying the &lt;code&gt;.btn&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;btn btn-success&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Success Button&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Primary Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-success&quot;&gt;Success Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-warning&quot;&gt;Warning Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-danger&quot;&gt;Danger Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-info&quot;&gt;Info Button&lt;/a&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 06 Jul 2014 00:00:00 +0000</pubDate>
         <link>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</link>
@@ -208,6 +90,8 @@
         <description>&lt;p&gt;这个没那么好学呀&lt;/p&gt;
 
 &lt;p&gt;带我学会了再说吧~&lt;/p&gt;
+
+&lt;p&gt;http://wowubuntu.com/markdown/&lt;/p&gt;
 </description>
         <pubDate>Sun, 06 Jul 2014 00:00:00 +0000</pubDate>
         <link>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/Markdown%E5%AD%A6%E4%B9%A0.html</link>
