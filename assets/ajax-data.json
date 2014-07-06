@@ -20,6 +20,7 @@
 		"定期总结": { "avatar":"http://lendfating.github.com/assets/images/categories/定期总结.jpg", "description":"有反馈才会权衡得失" },
 		"定期规划": { "avatar":"http://lendfating.github.com/assets/images/categories/定期规划.jpg", "description":"有目标才会更有动力" },
 		"异想天开": { "avatar":"http://lendfating.github.com/assets/images/categories/异想天开.jpg", "description":"未来不可知，但是或许可预" },
-		"生活点滴": { "avatar":"http://lendfating.github.com/assets/images/categories/生活点滴.jpg", "description":"繁杂的或许就是生活" }
+		"生活点滴": { "avatar":"http://lendfating.github.com/assets/images/categories/生活点滴.jpg", "description":"繁杂的或许就是生活" },
+		"博客搭建": { "avatar":"http://lendfating.github.com/assets/images/categories/博客搭建.jpg", "description":"详细讲述了利用jekyll搭建个性化博客并挂载在github上的过程" }
 	}
 }
