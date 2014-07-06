@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Other</title>
-    <description>Blog for recording the way of learning.</description>
+    <description>Blog for recording the way of life.</description>
     <link>http://lendfating.github.com/other/</link>
     <atom:link href="http://lendfating.github.com/other/feed.xml" rel="self" type="application/rss+xml" />
     
