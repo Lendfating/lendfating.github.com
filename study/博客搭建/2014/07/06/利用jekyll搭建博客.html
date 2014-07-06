@@ -1,126 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<meta name="description" content="利用jekyll搭建博客，然后挂载在github上">
-	<meta name="keywords" content="jekyll, github, 博客">
-	<meta name="google-site-verification" content="fZui8gemJWp_6GIGMGUgnF5l5o5b0RgzDhfmzv-PSnY">
-	
-    <title>利用jekyll搭建博客</title>
-	
-	<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <link rel="stylesheet" href="/assets/css/style.css">
-	<script src="/assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
-	<script src="/assets/js/basic.js" type="text/javascript"></script>
-</head>
-
-	
-	<body class="post output reader-day-mode reader-font1">
-	
-		<!-- 几个重要的导航栏 -->
-<div class="navbar">
-
-	<!-- 左上角菜单导航（默认隐藏） -->
-<div class="navbar-menu">
-	<button class="dl-trigger">Open Menu</button>
-	<ul class="dl-menu">
-		<li class="dl-back">
-			<a href="/study/categories/博客搭建">博客搭建</a>
-		</li>
-		<div>
-			<ul class="sub-menu">
-				
-			</ul>
-		</div>
-	</ul>
-</div>
-	
-	<!-- 右上角作者信息导航 -->
-<div class="navbar-user">
-	<a class="dl-trigger avatar">
-		<img src="/assets/images/avatar.jpg">
-		<b class="caret"></b>
-	</a>
-	<ul class="dl-menu">
-		<li class="dl-back"><a href="#">back</a></li>
-		<li>
-			<img src="/assets/images/avatar.jpg" class="author-photo">
-			<h4>Lendfating</h4>
-			<p>I am a student majoring in computer science at UCAS now. And I will be graduating in 2016 summer.</p>
-		</li>
-		<li><a href="http://www.linkedin.com/profile/view?id=352723424&authType=name&authToken=C1k5&trk=member-photo" target="_blank">Learn More</a></li>
-		<li><a href="mailto:lizhen00000@gmail.com"><i class="icon-envelope"></i> Email</a></li>
-	</ul>
-</div>
-	
-	<!-- 右上角 Post 显示信息设置 -->
-<div class="navbar-setting">
-	<a class="dl-trigger"><i class="icon-font"></i></a>
-	<div class="setting-box">
-		<div class="btn-group change-background">
-			<a class="btn btn-daytime active" data="reader-day-mode"><i class="icon-sun"></i></a>
-			<a class="btn btn-nighttime" data="reader-night-mode"><i class="icon-moon"></i></a>
-		</div>
-		<div class="btn-group change-font">
-			<a class="btn font active" data="reader-font1">宋体</a>
-			<a class="btn font hei" data="reader-font2">黑体</a>
-		</div>
-	</div>
-</div>
-	
-	<!-- 右下角返回顶部导航（默认隐藏） -->
-<div class="navbar-go2top hidden-go2top">
-	<a href="#"> <i class="icon-circle-arrow-up"></i></a>
-</div>
-	
-</div>
-<!-- end of 几个重要的导航栏 -->
-
-		<!-- 主体显示区 -->
-		<div id="show-note-container">
-			<div class="post-bg" id="flag">
-				<div class="container">
-					<div class="people">
-						<a href="/study/categories/博客搭建" class="author name">
-							<div class="avatar">
-								<img src="/assets/images/categories/博客搭建.jpg">
-							</div>
-							<br>
-							博客搭建
-						</a>
-						<div class="about">
-							<p class="description intro" category="博客搭建">该专题没有描述信息</p>
-						</div>
-					</div>
-					<div class="article">
-						<div class="preview">
-							<h1 class="title">利用jekyll搭建博客</h1>
-							<div class="article-info">
-								<p>
-									<i class="icon-clock"></i> July 06, 2014 
-									&nbsp;&nbsp; 
-									<a href="/study/categories/博客搭建"><i class="icon-book"></i>博客搭建</a>
-									&nbsp;
-									<i class="icon-th"></i>
-									
-										<a class="collections" href="/study/tags/jekyll">jekyll</a>
-									
-										<a class="collections" href="/study/tags/github">github</a>
-									
-										<a class="collections" href="/study/tags/博客">博客</a>
-									
-								</p>
-							</div>
-							<div class="show-content">
-								<blockquote>
+<blockquote>
   <p>一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：
-	1. 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； 
-	2. 博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。
+	A. 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； 
+	B. 博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。
 因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。</p>
 </blockquote>
 
@@ -128,47 +9,57 @@
 
 <h3 id="section">1. 功能需求</h3>
 
-<p>在最开始，根据之前使用博客的经验和自己的思考，先整理一下对新博客的功能需求信息，以方便进行合理的私人定制工作。下面分别就组织结构、功能等方面进行说明。</p>
+<p>在最开始，根据之前使用博客的经验和自己的思考，先整理一下对新博客的功能需求信息，以方便进行合理的私人定制工作。下面分别就内容结构、功能等方面进行说明。</p>
 
-<h5 id="section-1">1.1 结构组织</h5>
+<h5 id="section-1">1.1 内容组织</h5>
 
-<p>结构组织，也就是整个博客网站内容的逻辑组织结构，初步打算按 模块(module)–&gt;专题(category)–&gt;博文(post) 的层次进行组织。
-整个网站按内容划分为三个比较独立的模块：技术学习(study)、项目实践(project)、生活点滴(other)。模块间的独立性较强，尤其是 生活点滴 模块，最好与其他两个模块间的独立性要更强。</p>
+<p>结构组织，也就是整个博客网站内容的逻辑组织结构，初步打算按<code>模块(module)</code>–&gt;<code>专题(category)</code>–&gt;<code>博文(post)</code>的层次进行组织。</p>
 
-<pre><code>技术学习模块：主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。
-项目实践模块：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。
-生活点滴模块：主要用于其他事项的记录，如异想天开、人生规划、生活点滴、定期总结等专题。
-</code></pre>
+<p>整个网站按内容划分为三个比较独立的模块：<code>技术学习(study)</code>、<code>项目实践(project)</code>、<code>生活点滴(other)</code>。模块间的独立性较强，尤其是<code>生活点滴</code>模块，最好与其他两个模块间的独立性要更强。</p>
+
+<p><code>技术学习模块</code>：主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。
+<code>项目实践模块</code>：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。
+<code>生活点滴模块</code>：主要用于其他事项的记录，如异想天开、定期规划、生活点滴、定期总结等专题。</p>
 
 <h5 id="section-2">1.2 功能说明</h5>
 
-<p>既然要做一个新博客，那么他必须要比之前的有很多更吸引自己的特性才可以。
-a. 整个网站组织一定要条理清晰，方便用户很容易的找到自己需要的博文。为了达到这一点，整个网站三层的方式进行组织。</p>
+<p>既然要做一个新博客，那么他必须要比之前的有很多更吸引自己的特性才可以。</p>
 
-<p>实现自己的博客，主要功能应该包括如下几个方面</p>
+<p>a. 整个网站组织一定要条理清晰，方便用户很容易的找到自己需要的博文。为了达到这一点，整个网站分五层进行组织。组织结构如下图：
+<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cfhin86j20oc0dlt9v.jpg" alt="网站组织结构" />
+如上图，整个网站或分为三个比较独立的<code>模块</code>，在每个<code>模块</code>内，会有很多博文。每个<code>博文</code>都会属于一个<code>专题</code>，同时可能被贴上若干个<code>标签</code>，因此这些博文可以按<code>专题</code>或<code>标签</code>两种方式进行组织。因此，对应的该网站总共可以划分为5类网页。
+<code>网站首页</code>：主要提供三个子模块的连接。
+<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cxrnzphj20jn085dgg.jpg" alt="网站首页" />
+<code>模块首页</code>：展示该模块的所有博文列表。
+<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cz2hy7ej20wd0gzdj5.jpg" alt="模块首页" />
+<code>专题首页</code>：展示该模块所包含的所有专题列表。
+<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cyozcffj20v80g6abc.jpg" alt="专题首页" /></p>
 
-<p>1、内容方面：按 模块–&gt;专题–&gt;博客 层次进行组织。
-	从内容方面，应该主要包括三个主要大模块：技术学习、项目实践、生活点滴。各个模块之间内容要相对独立。
-	技术学习模块：
-		主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。
-	项目实践模块：
-		主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。
-	生活点滴模块：
-		主要用于其他事项的记录，如异想天开、人生规划、生活点滴、定期总结等专题。
-	允许随时填写一些类似微博的激励语言，定期自动不自动的给予提示
-2、结构组织方面，一定要条理清晰。一个模块相当于一个独立的网站，每个模块内提供 hot posts 展示、按专题展示、每个专题内Posts展示、按标签展示。
+<p><code>专题详情页</code>：展示该专题下的所有博文列表。
+<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3d02hc23j20xo0gq40c.jpg" alt="专题详情页" /></p>
+
+<p><code>标签展示页</code>：标签列表及选中标签对应的博文列表。
+<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cztddvgj20xy0gn41o.jpg" alt="标签展示页" /></p>
+
+<p><code>博文页</code>：展示博文的具体内容。
+<img src="http://ww2.sinaimg.cn/large/72a3bba3jw1ei3czg5ylpj20wy0gjacs.jpg" alt="博文页" /></p>
+
+<p>b. 网站应具备的功能说明：
+1. 提供基本工具栏（包括导航栏、回到顶部等）。
+2. 允许随时自定义及添加一些励志的名言警句，并不定期显示。
+3. 界面风格方面，不要求很华丽，朴实但要条理清晰、整洁，参考简书的样式吧。
+4. 用markdown进行博客的书写，方便跨平台的实现
+5. 图片用图床实现。图床一定要想好怎么办。
+6. 尽量实现一个可视化的简单博客书写平台。为了简化，省略登陆步骤，改用本地写博客的方式，不提供在线可视化的博客书写。</p>
+
+<p>2、结构组织方面，一定要条理清晰。一个模块相当于一个独立的网站，每个模块内提供 hot posts 展示、按专题展示、每个专题内Posts展示、按标签展示。
 	主要提供按标签分类查找和按专题分类查找两种方式，因此页面的组织结构也主要围绕这两种方式展开。
 	tags展示页：All + 所有tag列表，选中某个tag，下面会展示对应的文章摘要。
 	专题（Category）集页：展示所有专题。选中某个专题后，会进入该专题详情页。
 	专题详情页：左侧显示对该专题的简介，右侧为该专题所包含的所有文章摘要。
 	文章（Post）详情页：显示文章正文。
 	此外，由于提供搜索功能，因此需要定制一个搜索结果展示页。
-3、界面风格方面，不要求很华丽，朴实但要条理清晰、整洁，参考简书的样式吧。
-4、用markdown进行博客的书写，方便跨平台的实现
-5：图片用图床实现。图床一定要想好怎么办。
-6：尽量实现一个可视化的简单博客书写平台。为了简化，省略登陆步骤，改用本地写博客的方式，不提供在线可视化的博客书写。</p>
-
-<p>菜单：home、tags、Category、about、basic。</p>
+3、</p>
 
 <h1 id="heading-1">Heading 1</h1>
 
@@ -292,135 +183,3 @@ a. 整个网站组织一定要条理清晰，方便用户很容易的找到自�
 <div><a href="#" class="btn btn-warning">Warning Button</a></div>
 <div><a href="#" class="btn btn-danger">Danger Button</a></div>
 <div><a href="#" class="btn btn-info">Info Button</a></div>
-
-							</div>
-							<div class="meta-bottom clearfix">
-								<div id="like-btn-package" class="like">
-									<a onclick="return false;" class="btn like-button ">
-										<i class="icon-heart-empty"></i> 喜欢
-									</a>
-								</div>
-								<ul class="share-note-text">
-									<li><a href="mailto:lizhen00000@gmail.com" target="_blank"><i class="icon-envelope"></i></a></li>
-									<li><a href="http://www.weibo.com/Lendfating" target="_blank"><i class="icon-weibo"></i></a></li>
-									<li><a href="https://twitter.com/Lendfating" target="_blank"><i class="icon-twitter"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Functions -->
-			<script>
-			function change_tab_pane(index){
-				obj_li = jQuery("div.function div.comment ul.nav li");
-				obj_tab_pane = jQuery("div.function div.comment div.tab-content div.tab-pane");
-				obj_li.removeClass("active");
-				$(obj_li[index]).addClass("active");
-				obj_tab_pane.removeClass("active");
-				$(obj_tab_pane[index]).addClass("active");
-			}
-			</script>
-			<div class="function">
-				<div class="comment">
-					<ul class="nav nav-tabs">
-						<li class="active">
-							<a href="#" onclick="change_tab_pane(0); return false;">入选专题</a>
-						</li>
-						<li class="nav-author">
-							<a href="#" onclick="change_tab_pane(1); return false;">作者信息</a>
-						</li>
-						<li class="">
-							<a href="#" onclick="change_tab_pane(2); open_disqus_comments(); return false;">评论</a>
-						</li>
-						<li class="">
-							<a href="#" onclick="change_tab_pane(3); return false;">喜欢</a>
-						</li>
-					</ul>
-					<div class="tab-content">
-						<div class="collections tab-pane clearfix active" id="collections">
-							<ul id="note-collections">
-								<li>
-									<a href="/study/categories/博客搭建">
-										<div class="img-broder">
-											<img src="/assets/images/categories/博客搭建.jpg" thumbnail="300x300">
-										</div>
-										<br>
-										博客搭建
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="tab-pane" id="author">
-							<div class="people">
-								<a href="http://jianshu.io/users/218f09480a7f" class="author name">
-									<div class="avatar">
-										<img src="/assets/images/avatar.jpg">
-									</div>
-									<br>
-									Lendfating
-								</a>
-								<div class="about">
-									<p class="intro">I am a student majoring in computer science at UCAS now. And I will be graduating in 2016 summer.</p>
-								</div>
-								<div class="sns">
-									<a href="mailto:lizhen00000@gmail.com" target="_blank"><i class="icon-envelope"></i></a>
-									<a href="https://github.com/Lendfating" target="_blank"><i class="icon-github"></i></a>
-									<a href="http://www.linkedin.com/profile/view?id=352723424&authType=name&authToken=C1k5&trk=member-photo" target="_blank"><i class="icon-linkedin"></i></a>
-									<a href="http://www.weibo.com/Lendfating" target="_blank"><i class="icon-weibo"></i></a>
-									<a href="https://twitter.com/Lendfating" target="_blank"><i class="icon-twitter"></i></a>
-									<a href="https://www.facebook.com/lendfating" target="_blank"><i class="icon-facebook"></i></a>
-									<a href="https://plus.google.com/u/0/104389003870280325782/posts" target="_blank"><i class="icon-google-plus"></i></a>
-								</div>
-							</div>
-						</div>
-						<div class="comment-list clearfix tab-pane" id="comments">
-						<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'lendfating'; // required: replace example with your forum shortname
-    var disqus_identifier = '/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/利用jekyll搭建博客'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
- 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-	var disqus_loaded = false;
-    function open_disqus_comments() {
-		if ( disqus_loaded ) return;
-		disqus_loaded = true;
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    };
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-						</div>
-						<div class="tab-pane clearfix like" id="like">
-						</div>
-						
-						<a href="/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/Markdown%E5%AD%A6%E4%B9%A0.html" class="before">
-							<i class="icon-arrow-left"></i>上一篇
-						</a>
-						
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end of 主体显示区 -->
-		
-		
-<!-- Asynchronous Google Analytics snippet -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-52550195-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-		
-	</body>
-</html>
