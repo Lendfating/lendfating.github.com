@@ -7,7 +7,147 @@
     <atom:link href="http://lendfating.github.com/study/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>利用jekyll搭建博客</title>
+        <title>Markdown语法学习</title>
+        <description>&lt;p&gt;本文讲述了markdown的基本语法和常见的markdown编辑器，为更好的利用markdown写博客打下基础。&lt;/p&gt;
+
+&lt;p&gt;markdown的基本语法应该参见
+&lt;a href=&quot;http://wowubuntu.com/markdown/&quot;&gt;这里&lt;/a&gt;
+。当然，也可以参看一些markdown编辑器的帮助文档，如
+&lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https%3A%2F%2Fwww.zybuluo.com%2Fstatic%2Feditor%2Fmd-help.markdown&quot;&gt;作业部落的帮助文档&lt;/a&gt;
+或
+&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;MarkdownPad的帮助文档（初级）&lt;/a&gt;
+和
+&lt;a href=&quot;https://michelf.ca/projects/php-markdown/extra/&quot;&gt;MarkdownPad的帮助文档（高级）&lt;/a&gt;
+。需要注意的是，不同的编辑器可能根据自己的需要对标准的markdown语法进行了适当的修改，所以在阅读是要稍微注意一下。&lt;/p&gt;
+
+&lt;p&gt;下面在介绍几种常见的markdown编辑器。参考
+&lt;a href=&quot;http://www.open-open.com/news/view/1be6464&quot;&gt;这里&lt;/a&gt;
+。在线版的我推荐使用
+&lt;a href=&quot;https://www.zybuluo.com/mdeditor&quot;&gt;作业部落&lt;/a&gt;
+离线版的我推荐使用
+&lt;a href=&quot;http://markdownpad.com/&quot;&gt;MarkdownPad 2&lt;/a&gt;
+和
+&lt;a href=&quot;http://www.mdcharm.com/&quot;&gt;MdCharm&lt;/a&gt;
+。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+        <link>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/14/Markdown%E5%AD%A6%E4%B9%A0.html</link>
+        <guid isPermaLink="true">http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/14/Markdown%E5%AD%A6%E4%B9%A0.html</guid>
+      </item>
+    
+      <item>
+        <title>利用jekyll搭建博客——实践篇</title>
+        <description>&lt;p&gt;紧接着前一篇
+&lt;a href=&quot;http://lendfating.github.io/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E9%9C%80%E6%B1%82%E7%AF%87.html&quot;&gt;利用jekyll搭建博客——需求篇&lt;/a&gt;
+下面讲述一下如何利用jekyll实现满足自己需求的博客平台，并成功将其挂载在github上。&lt;/p&gt;
+
+&lt;h3 id=&quot;github&quot;&gt;3. github上博客搭建&lt;/h3&gt;
+
+&lt;p&gt;关于github上如何搭建博客，可以参考
+&lt;a href=&quot;https://pages.github.com/&quot;&gt;官方文档&lt;/a&gt;
+，从中会发现详细的项目创建过程。&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll&quot;&gt;4. jekyll使用文档&lt;/h3&gt;
+
+&lt;p&gt;为了能充分利用jekyll的功能，并更好地实现自定义的需求，需要好好研究一下jekyll的官方文档。具体文档可以参考
+&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;这里&lt;/a&gt;
+，有人进行了相关的汉化工作，对应的中文文档参考
+&lt;a href=&quot;http://jekyllcn.com/&quot;&gt;这里&lt;/a&gt;
+。中文版由于更新不及时等原因，可能存在局部未翻译或者局部遗漏等问题，可以对照着看。&lt;/p&gt;
+
+&lt;p&gt;通过这部分文档的阅读，可以对jekyll的整体运行流程有所了解，并且知道其功能的各种限制，据此可以设计出本博客平台需求对应的解决方案，如下：&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;4.1 模块隔离的实现&lt;/h4&gt;
+&lt;p&gt;为了实现三个完全隔离的模块，有两种方案可供选择：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;分别建立三个独立的工程，代码分别copy。&lt;/li&gt;
+  &lt;li&gt;利用插件实现模块独立。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;采用第一种方案，代码独立性更强，且每一部分内部直接采用典型的project site即可，无需本地生成_site文件。&lt;/p&gt;
+
+&lt;p&gt;采用第二种方案时，虽然采用插件理论上可以实现将一个项目彻底切分为三个独立的模块，但是由于github并不支持插件（出于安全考虑），因此必须首先在本地生成网站生成文件_site，在将其上传到github对应的工程。&lt;/p&gt;
+
+&lt;h4 id=&quot;category-&quot;&gt;4.2 Category 分类的实现（&lt;code&gt;专题页&lt;/code&gt;及&lt;code&gt;专题详情页&lt;/code&gt;）&lt;/h4&gt;
+
+&lt;p&gt;jekyll默认的分类功能比较有限，只能在同一个页面中将所有的博客按类划分，并不能将不同类型的博客放入不同的页面，因此需要用户自定义插件以实现该功能（即实现&lt;code&gt;专题详情页&lt;/code&gt;）。具体插件的书写方法可以参考官方文档中的
+&lt;a href=&quot;http://jekyllcn.com/docs/plugins/&quot;&gt;插件部分&lt;/a&gt;
+。参见其中生成器部分的插件书写格式即可。&lt;/p&gt;
+
+&lt;h4 id=&quot;tags-&quot;&gt;4.3 Tags 分类的实现（&lt;code&gt;标签页&lt;/code&gt;）&lt;/h4&gt;
+
+&lt;p&gt;jekyll默认的标签功能也比较有限，只能在同一个页面内将所有博客按标签进行划分，并不能分标签将博客划入不同的页面，因此也需要用户自定义插件以实现该功能，具体实现方法与4.2部分类似。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;4.4 名言警句的添加与动态显示&lt;/h4&gt;
+
+&lt;p&gt;由于jekyll生成的网站都为静态网页，无法实现一些复杂的动态功能，因此为了实现名言警句的添加与动态显示，需要充分利用js代码警醒一些动态功能的后续实现。通过js控制和修改html内容，从而可以实现动态加载与显示的功能。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;4.5 评论功能的添加&lt;/h4&gt;
+
+&lt;p&gt;由于jekyll生成的网站为静态网页，无法实现添加评论这类动态功能，因此我们需要采用第三方的评论平台，如Disqus，来实现评论功能。&lt;/p&gt;
+
+&lt;p&gt;利用Disqus实现评论的功能可以直接参考
+&lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus官网网站&lt;/a&gt;
+或者
+&lt;a href=&quot;http://blog.christophvoigt.com/enable-comments-on-ghost-with-disqus/#&quot;&gt;这里&lt;/a&gt;
+。具体步骤为：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;注册Disqus账号&lt;br /&gt;
+ 首先，&lt;a href=&quot;https://disqus.com/admin/signup/?utm_source=New-Site&quot;&gt;注册账号并新建网站&lt;/a&gt;，设置short name等属性。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;插入脚本&lt;br /&gt;
+ 将下述脚本粘贴到适当的位置。&lt;br /&gt;
+ ```html
+ &amp;lt;div id=&quot;disqus_thread&quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &lt;script type=&quot;text/javascript&quot;&gt;
+     var disqus_shortname = &#39;example&#39;; // required: replace example with your forum shortname
+     var disqus_identifier = &#39;&#39;; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...&lt;/script&gt;&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; /* * * DON&#39;T EDIT BELOW THIS LINE * * */
+ (function() {
+     var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+     dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+     (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+ })();  &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+    &lt;p&gt;&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;```&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;配置变量&lt;br /&gt;
+ 替换上述代码中对应的变量，你适合你的情况。&lt;/li&gt;
+  &lt;li&gt;重启服务器&lt;br /&gt;
+ 重启服务器，以使其生效。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;4.6 博文搜索功能&lt;/h4&gt;
+
+&lt;p&gt;最简单的博文搜索功能采用
+&lt;a href=&quot;https://www.google.com/cse/&quot;&gt;私人定制Google搜索&lt;/a&gt;
+进行实现，官方文档参考
+&lt;a href=&quot;https://developers.google.com/custom-search/docs/overview&quot;&gt;这里&lt;/a&gt;
+。由于我们需要的功能没那么复杂，直接采用最简单的图形化设置即可实现。通过“外观”-&amp;gt;“布局”-&amp;gt;“仅限结果”即可实现。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;5. 自定义本地编译脚本&lt;/h3&gt;
+
+&lt;p&gt;由于插件的原因，博客的最终文件必须在本地生成之后再上传到github上发布。所以，这就涉及到源代码与发布文件的版本控制问题。一种方案是将发布文件设置为name.github.io的master分支，在此之外新建一个名为source的分支用于存放源代码。但是这种方案发布时经常出现两个版本间数据混乱的现象，目前还没仔细研究是怎么回事，我目前的方案是创建两个project分别存放源代码和发布文件。&lt;/p&gt;
+
+&lt;p&gt;为了方便本地的编译，我又新定义了一个本地的脚本用于本地的编译生成工作。由于windows下github的发布总是出问题，所以发布的步骤暂且省略，待以后修正再说吧。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;6. 其他功能说明&lt;/h3&gt;
+
+&lt;p&gt;像富文本编辑，图床等功能的实现留在以后的升级版本再说吧，暂且先实现这些简单的基本功能。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 07 Jul 2014 00:00:00 +0000</pubDate>
+        <link>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/07/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E5%AE%9E%E8%B7%B5%E7%AF%87.html</link>
+        <guid isPermaLink="true">http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/07/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E5%AE%9E%E8%B7%B5%E7%AF%87.html</guid>
+      </item>
+    
+      <item>
+        <title>利用jekyll搭建博客——需求篇</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：&lt;br /&gt;
 1. 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； &lt;br /&gt;
@@ -19,28 +159,25 @@
 
 &lt;h3 id=&quot;section&quot;&gt;1. 功能需求&lt;/h3&gt;
 
-&lt;p&gt;在最开始，根据之前使用博客的经验和自己的思考，先整理一下对新博客的功能需求信息，以方便进行合理的私人定制工作。下面分别就内容结构、功能等方面进行说明。&lt;/p&gt;
+&lt;p&gt;在最开始，根据之前使用博客的经验和自己的思考，先整理一下对新博客的功能需求信息，以方便进行合理的私人定制工作。下面分别就内容组织、功能说明等方面进行阐述。&lt;/p&gt;
 
 &lt;h5 id=&quot;section-1&quot;&gt;1.1 内容组织&lt;/h5&gt;
 
-&lt;p&gt;结构组织，也就是整个博客网站内容的逻辑组织结构，初步打算按&lt;code&gt;模块(module)&lt;/code&gt;–&amp;gt;&lt;code&gt;专题(category)&lt;/code&gt;–&amp;gt;&lt;code&gt;博文(post)&lt;/code&gt;的层次进行组织。&lt;/p&gt;
+&lt;p&gt;内容组织，也就是整个博客网站内容的逻辑组织结构，初步打算按&lt;code&gt;模块(module)&lt;/code&gt;–&amp;gt;&lt;code&gt;专题(category)&lt;/code&gt;–&amp;gt;&lt;code&gt;博文(post)&lt;/code&gt;的层次进行组织。&lt;/p&gt;
 
-&lt;p&gt;整个网站按内容划分为三个比较独立的模块：&lt;code&gt;技术学习(study)&lt;/code&gt;、 &lt;code&gt;项目实践(project)&lt;/code&gt;、 &lt;code&gt;生活点滴(other)&lt;/code&gt;。 模块间的独立性较强，尤其是&lt;code&gt;生活点滴&lt;/code&gt;模块，最好与其他两个模块间的独立性要更强。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;技术学习模块&lt;/code&gt;：主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;项目实践模块&lt;/code&gt;：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;生活点滴模块&lt;/code&gt;：主要用于其他事项的记录，如异想天开、定期规划、生活点滴、定期总结等专题。&lt;/p&gt;
+&lt;p&gt;整个网站按内容划分为三个比较独立的模块：&lt;code&gt;技术学习(study)&lt;/code&gt;、 &lt;code&gt;项目实践(project)&lt;/code&gt;、 &lt;code&gt;生活点滴(other)&lt;/code&gt;。 模块间的独立性较强，尤其是&lt;code&gt;生活点滴&lt;/code&gt;模块，最好与其他两个模块间的独立性要更强。&lt;br /&gt;
+&lt;code&gt;技术学习模块&lt;/code&gt;：主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。&lt;br /&gt;
+&lt;code&gt;项目实践模块&lt;/code&gt;：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。&lt;br /&gt;
+&lt;code&gt;生活点滴模块&lt;/code&gt;：主要用于其他事项的记录，如异想天开、定期规划、生活点滴、定期总结等专题。&lt;/p&gt;
 
 &lt;h5 id=&quot;section-2&quot;&gt;1.2 功能说明&lt;/h5&gt;
 
 &lt;p&gt;既然要做一个新博客，那么他必须要比之前的有很多更吸引自己的特性才可以。&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;1.2.1&lt;/em&gt; 整个网站组织一定要条理清晰，方便用户很容易的找到自己需要的博文。为了达到这一点，整个网站分五层进行组织。组织结构如下图：
+&lt;p&gt;&lt;strong&gt;1.2.1&lt;/strong&gt; 整个网站组织一定要条理清晰，方便用户很容易的找到自己需要的博文。为了达到这一点要求，整个网站分五层进行组织。组织结构如下图：
 &lt;img src=&quot;http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cfhin86j20oc0dlt9v.jpg&quot; alt=&quot;网站组织结构&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;如上图，整个网站或分为三个比较独立的&lt;code&gt;模块&lt;/code&gt;，在每个&lt;code&gt;模块&lt;/code&gt;内，会有很多博文。每个&lt;code&gt;博文&lt;/code&gt;都会属于一个&lt;code&gt;专题&lt;/code&gt;，同时可能被贴上若干个&lt;code&gt;标签&lt;/code&gt;，因此这些博文可以按&lt;code&gt;专题&lt;/code&gt;或&lt;code&gt;标签&lt;/code&gt;两种方式进行组织。因此，对应的该网站总共可以划分为5类网页。&lt;/p&gt;
+&lt;p&gt;如上图，整个网站划分为三个比较独立的&lt;code&gt;模块&lt;/code&gt;，在每个&lt;code&gt;模块&lt;/code&gt;内，会有很多博文。每个&lt;code&gt;博文&lt;/code&gt;都会属于一个&lt;code&gt;专题&lt;/code&gt;，同时可能被贴上若干个&lt;code&gt;标签&lt;/code&gt;，因此这些博文可以按&lt;code&gt;专题&lt;/code&gt;或&lt;code&gt;标签&lt;/code&gt;两种方式进行组织。因此，对应的该网站总共可以划分为5类网页。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;网站首页&lt;/code&gt;：主要提供三个子模块的连接。
 &lt;img src=&quot;http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cxrnzphj20jn085dgg.jpg&quot; alt=&quot;网站首页&quot; /&gt;&lt;/p&gt;
@@ -48,54 +185,53 @@
 &lt;p&gt;&lt;code&gt;模块首页&lt;/code&gt;：展示该模块的所有博文列表。
 &lt;img src=&quot;http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cz2hy7ej20wd0gzdj5.jpg&quot; alt=&quot;模块首页&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;专题首页&lt;/code&gt;：展示该模块所包含的所有专题列表。
+&lt;p&gt;&lt;code&gt;专题首页&lt;/code&gt;：展示该模块所包含的所有专题列表，选中某个专题后，会进入该专题对应的&lt;code&gt;专题详情页&lt;/code&gt;。
 &lt;img src=&quot;http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cyozcffj20v80g6abc.jpg&quot; alt=&quot;专题首页&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;专题详情页&lt;/code&gt;：展示该专题下的所有博文列表。
+&lt;p&gt;&lt;code&gt;专题详情页&lt;/code&gt;：展示所有与该专题相关的信息，包括该专题的基本介绍信息和该专题所包括的所有博文列表。&lt;code&gt;专题首页&lt;/code&gt;与&lt;code&gt;专题详情页&lt;/code&gt;共同构成了某特定模块下所有博文的专题组织结构，用户可据此利用专题结构查找目标博文。
 &lt;img src=&quot;http://ww3.sinaimg.cn/large/72a3bba3jw1ei3d02hc23j20xo0gq40c.jpg&quot; alt=&quot;专题详情页&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;标签展示页&lt;/code&gt;：标签列表及选中标签对应的博文列表。
+&lt;p&gt;&lt;code&gt;标签展示页&lt;/code&gt;：标签列表及选中标签所对应的博文列表。&lt;code&gt;标签展示页&lt;/code&gt;提供了某特定模块下所有博文的标签组织结构，用户可据此利用标签结构查找目标博文。
 &lt;img src=&quot;http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cztddvgj20xy0gn41o.jpg&quot; alt=&quot;标签展示页&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;博文页&lt;/code&gt;：展示博文的具体内容。
 &lt;img src=&quot;http://ww2.sinaimg.cn/large/72a3bba3jw1ei3czg5ylpj20wy0gjacs.jpg&quot; alt=&quot;博文页&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;1.2.2&lt;/em&gt; 网站应具备的功能说明：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.2.2&lt;/strong&gt; 网站应具备的特定功能说明：&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;提供基本工具栏（包括导航栏、回到顶部等）。  &lt;/li&gt;
-  &lt;li&gt;允许随时自定义及添加一些励志的名言警句，并不定期显示。  &lt;/li&gt;
-  &lt;li&gt;界面风格方面，不要求很华丽，朴实但要条理清晰、整洁，参考简书的样式吧。  &lt;/li&gt;
-  &lt;li&gt;用markdown进行博客的书写，方便跨平台的实现。  &lt;/li&gt;
-  &lt;li&gt;图片用图床实现。图床一定要想好怎么办。  &lt;/li&gt;
-  &lt;li&gt;尽量实现一个可视化的简单博客书写平台。为了简化，省略登陆步骤，改用本地写博客的方式，不提供在线可视化的博客书写。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+  &lt;li&gt;提供基本工具栏（包括导航栏、回到顶部等功能）。&lt;/li&gt;
+  &lt;li&gt;允许随时自定义及添加一些励志的名言警句，并不定期显示。&lt;/li&gt;
+  &lt;li&gt;对目标博文的查找，主要提供按专题分类查找和按标签分类查找两种基本查找方式，因此整个网站页面主要围绕这两种方式进行合理组织。具体参考&lt;strong&gt;1.2.1&lt;/strong&gt;部分。&lt;/li&gt;
+  &lt;li&gt;提供附加的博文搜索功能，因此需要定制一个搜索结果展示页。&lt;/li&gt;
+  &lt;li&gt;界面风格方面，不要求很华丽，但要条理清晰、简洁，可以参考简书样式。&lt;/li&gt;
+  &lt;li&gt;用markdown进行博文的书写，方便数据保存和以后可能的跨平台移植。&lt;/li&gt;
+  &lt;li&gt;博文内的图片要尽量寻找一个国内支持较好的图床。图床的功能尽量强大。&lt;/li&gt;
+  &lt;li&gt;尽量实现一个富文本博客书写平台，为了简化，省略登陆步骤，改用本地写博客的方式，不提供在线可视化的博客书写。&lt;/li&gt;
+  &lt;li&gt;提供强大的博客转载功能。图片自动复制、格式自动转换等。&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;2、结构组织方面，一定要条理清晰。一个模块相当于一个独立的网站，每个模块内提供 hot posts 展示、按专题展示、每个专题内Posts展示、按标签展示。
-	主要提供按标签分类查找和按专题分类查找两种方式，因此页面的组织结构也主要围绕这两种方式展开。
-	tags展示页：All + 所有tag列表，选中某个tag，下面会展示对应的文章摘要。
-	专题（Category）集页：展示所有专题。选中某个专题后，会进入该专题详情页。
-	专题详情页：左侧显示对该专题的简介，右侧为该专题所包含的所有文章摘要。
-	文章（Post）详情页：显示文章正文。
-	此外，由于提供搜索功能，因此需要定制一个搜索结果展示页。
-3、&lt;/p&gt;
+&lt;h3 id=&quot;section-3&quot;&gt;2. 平台选择&lt;/h3&gt;
+
+&lt;p&gt;根据以上功能需求部分的描述，最终打算选取github的pages功能进行博客的搭建。我主要考虑到以下几点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;免费，无限流量。&lt;/li&gt;
+  &lt;li&gt;享受git的版本管理功能，不用担心文章遗失。&lt;/li&gt;
+  &lt;li&gt;本身支持jekyll技术，会自动生成目标page，同时也允许用户直接修改生成的page。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当然，他也有一些不足，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;它生成的是静态网页，添加动态功能必须使用外部服务或js。比如评论功能就只能用disqus；而名言警句的添加和不定期显示功能的实现就必须依赖js。&lt;/li&gt;
+  &lt;li&gt;出于安全的考虑，github禁用了jekyll的插件功能，因此很多地方会受到限制，如用户模块的彻底分离。&lt;/li&gt;
+  &lt;li&gt;它不适合大型网站，因为没有用到数据库，每运行一次都必须遍历全部的文本文件，网站越大，生成时间越长。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Sun, 06 Jul 2014 00:00:00 +0000</pubDate>
-        <link>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</link>
-        <guid isPermaLink="true">http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</guid>
-      </item>
-    
-      <item>
-        <title>Markdown语法学习</title>
-        <description>&lt;p&gt;这个没那么好学呀&lt;/p&gt;
-
-&lt;p&gt;带我学会了再说吧~&lt;/p&gt;
-
-&lt;p&gt;http://wowubuntu.com/markdown/&lt;/p&gt;
-</description>
-        <pubDate>Sun, 06 Jul 2014 00:00:00 +0000</pubDate>
-        <link>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/Markdown%E5%AD%A6%E4%B9%A0.html</link>
-        <guid isPermaLink="true">http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/Markdown%E5%AD%A6%E4%B9%A0.html</guid>
+        <link>http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E9%9C%80%E6%B1%82%E7%AF%87%20-%20Copy.html</link>
+        <guid isPermaLink="true">http://lendfating.github.com/study/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E9%9C%80%E6%B1%82%E7%AF%87%20-%20Copy.html</guid>
       </item>
     
   </channel>

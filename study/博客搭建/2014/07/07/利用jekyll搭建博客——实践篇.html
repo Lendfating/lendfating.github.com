@@ -11,7 +11,7 @@
 	<meta name="keywords" content="jekyll, github, 博客">
 	<meta name="google-site-verification" content="fZui8gemJWp_6GIGMGUgnF5l5o5b0RgzDhfmzv-PSnY">
 	
-    <title>利用jekyll搭建博客</title>
+    <title>利用jekyll搭建博客——实践篇</title>
 	
 	<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -99,10 +99,10 @@
 					</div>
 					<div class="article">
 						<div class="preview">
-							<h1 class="title">利用jekyll搭建博客</h1>
+							<h1 class="title">利用jekyll搭建博客——实践篇</h1>
 							<div class="article-info">
 								<p>
-									<i class="icon-clock"></i> July 06, 2014 
+									<i class="icon-clock"></i> July 07, 2014 
 									&nbsp;&nbsp; 
 									<a href="/study/categories/博客搭建"><i class="icon-book"></i>博客搭建</a>
 									&nbsp;
@@ -117,77 +117,109 @@
 								</p>
 							</div>
 							<div class="show-content">
-								<blockquote>
-  <p>一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：<br />
-1. 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； <br />
-2. 博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。<br />
-因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。</p>
-</blockquote>
+								<p>紧接着前一篇
+<a href="http://lendfating.github.io/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E9%9C%80%E6%B1%82%E7%AF%87.html">利用jekyll搭建博客——需求篇</a>
+下面讲述一下如何利用jekyll实现满足自己需求的博客平台，并成功将其挂载在github上。</p>
 
-<p>好了，抱怨了这么多，下面开始讲述博客的搭建过程。</p>
+<h3 id="github">3. github上博客搭建</h3>
 
-<h3 id="section">1. 功能需求</h3>
+<p>关于github上如何搭建博客，可以参考
+<a href="https://pages.github.com/">官方文档</a>
+，从中会发现详细的项目创建过程。</p>
 
-<p>在最开始，根据之前使用博客的经验和自己的思考，先整理一下对新博客的功能需求信息，以方便进行合理的私人定制工作。下面分别就内容结构、功能等方面进行说明。</p>
+<h3 id="jekyll">4. jekyll使用文档</h3>
 
-<h5 id="section-1">1.1 内容组织</h5>
+<p>为了能充分利用jekyll的功能，并更好地实现自定义的需求，需要好好研究一下jekyll的官方文档。具体文档可以参考
+<a href="http://jekyllrb.com/">这里</a>
+，有人进行了相关的汉化工作，对应的中文文档参考
+<a href="http://jekyllcn.com/">这里</a>
+。中文版由于更新不及时等原因，可能存在局部未翻译或者局部遗漏等问题，可以对照着看。</p>
 
-<p>结构组织，也就是整个博客网站内容的逻辑组织结构，初步打算按<code>模块(module)</code>–&gt;<code>专题(category)</code>–&gt;<code>博文(post)</code>的层次进行组织。</p>
+<p>通过这部分文档的阅读，可以对jekyll的整体运行流程有所了解，并且知道其功能的各种限制，据此可以设计出本博客平台需求对应的解决方案，如下：</p>
 
-<p>整个网站按内容划分为三个比较独立的模块：<code>技术学习(study)</code>、 <code>项目实践(project)</code>、 <code>生活点滴(other)</code>。 模块间的独立性较强，尤其是<code>生活点滴</code>模块，最好与其他两个模块间的独立性要更强。</p>
+<h4 id="section">4.1 模块隔离的实现</h4>
+<p>为了实现三个完全隔离的模块，有两种方案可供选择：</p>
 
-<p><code>技术学习模块</code>：主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。</p>
+<ul>
+  <li>分别建立三个独立的工程，代码分别copy。</li>
+  <li>利用插件实现模块独立。</li>
+</ul>
 
-<p><code>项目实践模块</code>：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。</p>
+<p>采用第一种方案，代码独立性更强，且每一部分内部直接采用典型的project site即可，无需本地生成_site文件。</p>
 
-<p><code>生活点滴模块</code>：主要用于其他事项的记录，如异想天开、定期规划、生活点滴、定期总结等专题。</p>
+<p>采用第二种方案时，虽然采用插件理论上可以实现将一个项目彻底切分为三个独立的模块，但是由于github并不支持插件（出于安全考虑），因此必须首先在本地生成网站生成文件_site，在将其上传到github对应的工程。</p>
 
-<h5 id="section-2">1.2 功能说明</h5>
+<h4 id="category-">4.2 Category 分类的实现（<code>专题页</code>及<code>专题详情页</code>）</h4>
 
-<p>既然要做一个新博客，那么他必须要比之前的有很多更吸引自己的特性才可以。</p>
+<p>jekyll默认的分类功能比较有限，只能在同一个页面中将所有的博客按类划分，并不能将不同类型的博客放入不同的页面，因此需要用户自定义插件以实现该功能（即实现<code>专题详情页</code>）。具体插件的书写方法可以参考官方文档中的
+<a href="http://jekyllcn.com/docs/plugins/">插件部分</a>
+。参见其中生成器部分的插件书写格式即可。</p>
 
-<p><em>1.2.1</em> 整个网站组织一定要条理清晰，方便用户很容易的找到自己需要的博文。为了达到这一点，整个网站分五层进行组织。组织结构如下图：
-<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cfhin86j20oc0dlt9v.jpg" alt="网站组织结构" /></p>
+<h4 id="tags-">4.3 Tags 分类的实现（<code>标签页</code>）</h4>
 
-<p>如上图，整个网站或分为三个比较独立的<code>模块</code>，在每个<code>模块</code>内，会有很多博文。每个<code>博文</code>都会属于一个<code>专题</code>，同时可能被贴上若干个<code>标签</code>，因此这些博文可以按<code>专题</code>或<code>标签</code>两种方式进行组织。因此，对应的该网站总共可以划分为5类网页。</p>
+<p>jekyll默认的标签功能也比较有限，只能在同一个页面内将所有博客按标签进行划分，并不能分标签将博客划入不同的页面，因此也需要用户自定义插件以实现该功能，具体实现方法与4.2部分类似。</p>
 
-<p><code>网站首页</code>：主要提供三个子模块的连接。
-<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cxrnzphj20jn085dgg.jpg" alt="网站首页" /></p>
+<h4 id="section-1">4.4 名言警句的添加与动态显示</h4>
 
-<p><code>模块首页</code>：展示该模块的所有博文列表。
-<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cz2hy7ej20wd0gzdj5.jpg" alt="模块首页" /></p>
+<p>由于jekyll生成的网站都为静态网页，无法实现一些复杂的动态功能，因此为了实现名言警句的添加与动态显示，需要充分利用js代码警醒一些动态功能的后续实现。通过js控制和修改html内容，从而可以实现动态加载与显示的功能。</p>
 
-<p><code>专题首页</code>：展示该模块所包含的所有专题列表。
-<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cyozcffj20v80g6abc.jpg" alt="专题首页" /></p>
+<h4 id="section-2">4.5 评论功能的添加</h4>
 
-<p><code>专题详情页</code>：展示该专题下的所有博文列表。
-<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3d02hc23j20xo0gq40c.jpg" alt="专题详情页" /></p>
+<p>由于jekyll生成的网站为静态网页，无法实现添加评论这类动态功能，因此我们需要采用第三方的评论平台，如Disqus，来实现评论功能。</p>
 
-<p><code>标签展示页</code>：标签列表及选中标签对应的博文列表。
-<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cztddvgj20xy0gn41o.jpg" alt="标签展示页" /></p>
-
-<p><code>博文页</code>：展示博文的具体内容。
-<img src="http://ww2.sinaimg.cn/large/72a3bba3jw1ei3czg5ylpj20wy0gjacs.jpg" alt="博文页" /></p>
-
-<p><em>1.2.2</em> 网站应具备的功能说明：</p>
+<p>利用Disqus实现评论的功能可以直接参考
+<a href="https://disqus.com/">Disqus官网网站</a>
+或者
+<a href="http://blog.christophvoigt.com/enable-comments-on-ghost-with-disqus/#">这里</a>
+。具体步骤为：</p>
 
 <ol>
-  <li>提供基本工具栏（包括导航栏、回到顶部等）。  </li>
-  <li>允许随时自定义及添加一些励志的名言警句，并不定期显示。  </li>
-  <li>界面风格方面，不要求很华丽，朴实但要条理清晰、整洁，参考简书的样式吧。  </li>
-  <li>用markdown进行博客的书写，方便跨平台的实现。  </li>
-  <li>图片用图床实现。图床一定要想好怎么办。  </li>
-  <li>尽量实现一个可视化的简单博客书写平台。为了简化，省略登陆步骤，改用本地写博客的方式，不提供在线可视化的博客书写。</li>
+  <li>注册Disqus账号<br />
+ 首先，<a href="https://disqus.com/admin/signup/?utm_source=New-Site">注册账号并新建网站</a>，设置short name等属性。</li>
+  <li>
+    <p>插入脚本<br />
+ 将下述脚本粘贴到适当的位置。<br />
+ ```html
+ &lt;div id="disqus_thread"&gt;&lt;/div&gt;
+ <script type="text/javascript">
+     var disqus_shortname = 'example'; // required: replace example with your forum shortname
+     var disqus_identifier = ''; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...</script></p>
+
+    <pre><code> /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();  &lt;/script&gt;
+</code></pre>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <p><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></p>
+
+    <p>```</p>
+  </li>
+  <li>配置变量<br />
+ 替换上述代码中对应的变量，你适合你的情况。</li>
+  <li>重启服务器<br />
+ 重启服务器，以使其生效。</li>
 </ol>
 
-<p>2、结构组织方面，一定要条理清晰。一个模块相当于一个独立的网站，每个模块内提供 hot posts 展示、按专题展示、每个专题内Posts展示、按标签展示。
-	主要提供按标签分类查找和按专题分类查找两种方式，因此页面的组织结构也主要围绕这两种方式展开。
-	tags展示页：All + 所有tag列表，选中某个tag，下面会展示对应的文章摘要。
-	专题（Category）集页：展示所有专题。选中某个专题后，会进入该专题详情页。
-	专题详情页：左侧显示对该专题的简介，右侧为该专题所包含的所有文章摘要。
-	文章（Post）详情页：显示文章正文。
-	此外，由于提供搜索功能，因此需要定制一个搜索结果展示页。
-3、</p>
+<h4 id="section-3">4.6 博文搜索功能</h4>
+
+<p>最简单的博文搜索功能采用
+<a href="https://www.google.com/cse/">私人定制Google搜索</a>
+进行实现，官方文档参考
+<a href="https://developers.google.com/custom-search/docs/overview">这里</a>
+。由于我们需要的功能没那么复杂，直接采用最简单的图形化设置即可实现。通过“外观”-&gt;“布局”-&gt;“仅限结果”即可实现。</p>
+
+<h3 id="section-4">5. 自定义本地编译脚本</h3>
+
+<p>由于插件的原因，博客的最终文件必须在本地生成之后再上传到github上发布。所以，这就涉及到源代码与发布文件的版本控制问题。一种方案是将发布文件设置为name.github.io的master分支，在此之外新建一个名为source的分支用于存放源代码。但是这种方案发布时经常出现两个版本间数据混乱的现象，目前还没仔细研究是怎么回事，我目前的方案是创建两个project分别存放源代码和发布文件。</p>
+
+<p>为了方便本地的编译，我又新定义了一个本地的脚本用于本地的编译生成工作。由于windows下github的发布总是出问题，所以发布的步骤暂且省略，待以后修正再说吧。</p>
+
+<h3 id="section-5">6. 其他功能说明</h3>
+
+<p>像富文本编辑，图床等功能的实现留在以后的升级版本再说吧，暂且先实现这些简单的基本功能。</p>
 
 							</div>
 							<div class="meta-bottom clearfix">
@@ -274,7 +306,7 @@
 						<div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'lendfating'; // required: replace example with your forum shortname
-    var disqus_identifier = '/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/利用jekyll搭建博客'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+    var disqus_identifier = '/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/07/利用jekyll搭建博客——实践篇'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
  
     /* * * DON'T EDIT BELOW THIS LINE * * */
 	var disqus_loaded = false;
@@ -293,10 +325,14 @@
 						<div class="tab-pane clearfix like" id="like">
 						</div>
 						
-						<a href="/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/Markdown%E5%AD%A6%E4%B9%A0.html" class="before">
+						<a href="/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E9%9C%80%E6%B1%82%E7%AF%87%20-%20Copy.html" class="before">
 							<i class="icon-arrow-left"></i>上一篇
 						</a>
 						
+						
+						<a href="/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/14/Markdown%E5%AD%A6%E4%B9%A0.html" class="after">
+							下一篇<i class="icon-arrow-right"></i>
+						</a>
 						
 					</div>
 				</div>

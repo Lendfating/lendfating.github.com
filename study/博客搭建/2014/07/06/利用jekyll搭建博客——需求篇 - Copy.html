@@ -7,11 +7,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<meta name="description" content="了解 Markdown 语法，方便以后更好的写博客">
-	<meta name="keywords" content="markdown, 语法">
+	<meta name="description" content="利用jekyll搭建博客，然后挂载在github上">
+	<meta name="keywords" content="jekyll, github, 博客">
 	<meta name="google-site-verification" content="fZui8gemJWp_6GIGMGUgnF5l5o5b0RgzDhfmzv-PSnY">
 	
-    <title>Markdown语法学习</title>
+    <title>利用jekyll搭建博客——需求篇</title>
 	
 	<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -99,7 +99,7 @@
 					</div>
 					<div class="article">
 						<div class="preview">
-							<h1 class="title">Markdown语法学习</h1>
+							<h1 class="title">利用jekyll搭建博客——需求篇</h1>
 							<div class="article-info">
 								<p>
 									<i class="icon-clock"></i> July 06, 2014 
@@ -108,18 +108,95 @@
 									&nbsp;
 									<i class="icon-th"></i>
 									
-										<a class="collections" href="/study/tags/markdown">markdown</a>
+										<a class="collections" href="/study/tags/jekyll">jekyll</a>
 									
-										<a class="collections" href="/study/tags/语法">语法</a>
+										<a class="collections" href="/study/tags/github">github</a>
+									
+										<a class="collections" href="/study/tags/博客">博客</a>
 									
 								</p>
 							</div>
 							<div class="show-content">
-								<p>这个没那么好学呀</p>
+								<blockquote>
+  <p>一直想自己重新弄个博客，实在不想再用之前的博客了，原因是多方面的，比如：<br />
+1. 之前的博客条理组织性很差，且由于自己长时间未整理，现在已经乱作一团了，直接影响进一步写作的心情了； <br />
+2. 博客本身也有很多功能限制，如转载别人的博客时并不会自动对图片进行备份处理，导致现在很多博客无法正常阅读。<br />
+因此，决定自己重新搭建一个博客，记录以后的学习、积累过程。</p>
+</blockquote>
 
-<p>带我学会了再说吧~</p>
+<p>好了，抱怨了这么多，下面开始讲述博客的搭建过程。</p>
 
-<p>http://wowubuntu.com/markdown/</p>
+<h3 id="section">1. 功能需求</h3>
+
+<p>在最开始，根据之前使用博客的经验和自己的思考，先整理一下对新博客的功能需求信息，以方便进行合理的私人定制工作。下面分别就内容组织、功能说明等方面进行阐述。</p>
+
+<h5 id="section-1">1.1 内容组织</h5>
+
+<p>内容组织，也就是整个博客网站内容的逻辑组织结构，初步打算按<code>模块(module)</code>–&gt;<code>专题(category)</code>–&gt;<code>博文(post)</code>的层次进行组织。</p>
+
+<p>整个网站按内容划分为三个比较独立的模块：<code>技术学习(study)</code>、 <code>项目实践(project)</code>、 <code>生活点滴(other)</code>。 模块间的独立性较强，尤其是<code>生活点滴</code>模块，最好与其他两个模块间的独立性要更强。<br />
+<code>技术学习模块</code>：主要用于记录学习笔记等技术学习例程。以学习内容进行专题分类。<br />
+<code>项目实践模块</code>：主要用于记录每个重要项目的开发实践过程。以项目为专题进行分类。<br />
+<code>生活点滴模块</code>：主要用于其他事项的记录，如异想天开、定期规划、生活点滴、定期总结等专题。</p>
+
+<h5 id="section-2">1.2 功能说明</h5>
+
+<p>既然要做一个新博客，那么他必须要比之前的有很多更吸引自己的特性才可以。</p>
+
+<p><strong>1.2.1</strong> 整个网站组织一定要条理清晰，方便用户很容易的找到自己需要的博文。为了达到这一点要求，整个网站分五层进行组织。组织结构如下图：
+<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cfhin86j20oc0dlt9v.jpg" alt="网站组织结构" /></p>
+
+<p>如上图，整个网站划分为三个比较独立的<code>模块</code>，在每个<code>模块</code>内，会有很多博文。每个<code>博文</code>都会属于一个<code>专题</code>，同时可能被贴上若干个<code>标签</code>，因此这些博文可以按<code>专题</code>或<code>标签</code>两种方式进行组织。因此，对应的该网站总共可以划分为5类网页。</p>
+
+<p><code>网站首页</code>：主要提供三个子模块的连接。
+<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cxrnzphj20jn085dgg.jpg" alt="网站首页" /></p>
+
+<p><code>模块首页</code>：展示该模块的所有博文列表。
+<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3cz2hy7ej20wd0gzdj5.jpg" alt="模块首页" /></p>
+
+<p><code>专题首页</code>：展示该模块所包含的所有专题列表，选中某个专题后，会进入该专题对应的<code>专题详情页</code>。
+<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cyozcffj20v80g6abc.jpg" alt="专题首页" /></p>
+
+<p><code>专题详情页</code>：展示所有与该专题相关的信息，包括该专题的基本介绍信息和该专题所包括的所有博文列表。<code>专题首页</code>与<code>专题详情页</code>共同构成了某特定模块下所有博文的专题组织结构，用户可据此利用专题结构查找目标博文。
+<img src="http://ww3.sinaimg.cn/large/72a3bba3jw1ei3d02hc23j20xo0gq40c.jpg" alt="专题详情页" /></p>
+
+<p><code>标签展示页</code>：标签列表及选中标签所对应的博文列表。<code>标签展示页</code>提供了某特定模块下所有博文的标签组织结构，用户可据此利用标签结构查找目标博文。
+<img src="http://ww4.sinaimg.cn/large/72a3bba3jw1ei3cztddvgj20xy0gn41o.jpg" alt="标签展示页" /></p>
+
+<p><code>博文页</code>：展示博文的具体内容。
+<img src="http://ww2.sinaimg.cn/large/72a3bba3jw1ei3czg5ylpj20wy0gjacs.jpg" alt="博文页" /></p>
+
+<p><strong>1.2.2</strong> 网站应具备的特定功能说明：</p>
+
+<ul>
+  <li>提供基本工具栏（包括导航栏、回到顶部等功能）。</li>
+  <li>允许随时自定义及添加一些励志的名言警句，并不定期显示。</li>
+  <li>对目标博文的查找，主要提供按专题分类查找和按标签分类查找两种基本查找方式，因此整个网站页面主要围绕这两种方式进行合理组织。具体参考<strong>1.2.1</strong>部分。</li>
+  <li>提供附加的博文搜索功能，因此需要定制一个搜索结果展示页。</li>
+  <li>界面风格方面，不要求很华丽，但要条理清晰、简洁，可以参考简书样式。</li>
+  <li>用markdown进行博文的书写，方便数据保存和以后可能的跨平台移植。</li>
+  <li>博文内的图片要尽量寻找一个国内支持较好的图床。图床的功能尽量强大。</li>
+  <li>尽量实现一个富文本博客书写平台，为了简化，省略登陆步骤，改用本地写博客的方式，不提供在线可视化的博客书写。</li>
+  <li>提供强大的博客转载功能。图片自动复制、格式自动转换等。</li>
+</ul>
+
+<h3 id="section-3">2. 平台选择</h3>
+
+<p>根据以上功能需求部分的描述，最终打算选取github的pages功能进行博客的搭建。我主要考虑到以下几点：</p>
+
+<ul>
+  <li>免费，无限流量。</li>
+  <li>享受git的版本管理功能，不用担心文章遗失。</li>
+  <li>本身支持jekyll技术，会自动生成目标page，同时也允许用户直接修改生成的page。</li>
+</ul>
+
+<p>当然，他也有一些不足，如下：</p>
+
+<ul>
+  <li>它生成的是静态网页，添加动态功能必须使用外部服务或js。比如评论功能就只能用disqus；而名言警句的添加和不定期显示功能的实现就必须依赖js。</li>
+  <li>出于安全的考虑，github禁用了jekyll的插件功能，因此很多地方会受到限制，如用户模块的彻底分离。</li>
+  <li>它不适合大型网站，因为没有用到数据库，每运行一次都必须遍历全部的文本文件，网站越大，生成时间越长。</li>
+</ul>
 
 							</div>
 							<div class="meta-bottom clearfix">
@@ -206,7 +283,7 @@
 						<div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'lendfating'; // required: replace example with your forum shortname
-    var disqus_identifier = '/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/Markdown学习'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+    var disqus_identifier = '/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/利用jekyll搭建博客——需求篇 - Copy'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
  
     /* * * DON'T EDIT BELOW THIS LINE * * */
 	var disqus_loaded = false;
@@ -226,7 +303,7 @@
 						</div>
 						
 						
-						<a href="/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/06/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html" class="after">
+						<a href="/study//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2014/07/07/%E5%88%A9%E7%94%A8jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E5%AE%9E%E8%B7%B5%E7%AF%87.html" class="after">
 							下一篇<i class="icon-arrow-right"></i>
 						</a>
 						
