@@ -99,7 +99,7 @@
   &lt;li&gt;
     &lt;p&gt;插入脚本&lt;br /&gt;
  将下述脚本粘贴到适当的位置。&lt;br /&gt;
- ```html
+```html
  &amp;lt;div id=&quot;disqus_thread&quot;&amp;gt;&amp;lt;/div&amp;gt;
  &lt;script type=&quot;text/javascript&quot;&gt;
      var disqus_shortname = &#39;example&#39;; // required: replace example with your forum shortname
@@ -113,9 +113,8 @@
  })();  &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
     &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-    &lt;p&gt;&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;```&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+```&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;配置变量&lt;br /&gt;
  替换上述代码中对应的变量，你适合你的情况。&lt;/li&gt;
